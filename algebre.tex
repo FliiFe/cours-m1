@@ -1,0 +1,61 @@
+\documentclass{report}
+\newif\ifsolo
+
+\solofalse
+
+\input{src/preamble.tex}
+
+\begin{document}
+
+\pagestyle{empty}
+\begin{center}
+
+    ~ \vfill
+
+    \textsc{\LARGE ENS de Lyon}\\[1.5cm]
+    \textsc{\Large M1A}\\[0.5cm]
+
+    \rule{\linewidth}{0.5mm} \\[0.4cm]
+    {\huge \bfseries Advanced Algebra }\\[0.1cm]
+    \rule{\linewidth}{0.5mm} \\[0.4cm]
+
+    \begin{minipage}{0.4\textwidth}
+        \begin{flushleft} \large
+            \emph{Professor}\\
+            Sandra \textsc{Rozensztajn}
+        \end{flushleft}
+        \end{minipage}\hspace{1cm}\begin{minipage}{0.4\textwidth}
+        \begin{flushright} \large
+            \emph{Note-taking} \\
+            Théophile \textsc{Cailliau}
+        \end{flushright}
+    \end{minipage}\\[2cm]
+    \vfill
+    \includegraphics[width=7cm]{ensl.pdf}\\[1cm]
+    \vfill
+    {\large 2022-2023}\\
+\end{center}
+
+\newpage
+
+\dominitoc
+\tableofcontents
+\faketableofcontents
+
+\newpage
+
+\pagestyle{main}
+
+\foreach \i in {00, 01, 02, 03, 04, 05, 06, 07, 08, 09, 10} {%
+    \edef\FileName{algebre-\i}%
+    \IfFileExists{\FileName}{%
+       \input{src/\FileName}%
+    }
+}
+
+\newpage
+\pagestyle{empty}
+
+\printindex
+
+\end{document}

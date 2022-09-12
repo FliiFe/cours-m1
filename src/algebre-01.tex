@@ -1,0 +1,227 @@
+\ifsolo
+    ~
+
+    \vspace{1cm}
+
+    \begin{center}
+        \textbf{\LARGE Modules over a ring} \\[1em]
+    \end{center}
+
+    \vspace{1cm}
+
+    \tableofcontents
+
+    \vspace{1cm}
+
+\else
+    \chapter{Modules over a ring}
+
+    \minitoc
+\fi
+\thispagestyle{empty}
+
+
+\section{Definitions}
+
+In this chapter, $R$ is a fixed ring.
+
+\begin{dfn}
+    An $R$-module\index{module} is a commutative group $(M, +, 0_M)$ and a map $R\times M \longrightarrow M$ called scalar multiplication satisfying
+    \begin{itemize}
+        \item $\forall a,b\in R, \forall x\in M, \quad (a+b)x=ax+bx$
+        \item $\forall a,b\in R, \forall x\in M, \quad (ab)x=a(bx)$
+        \item $\forall a\in R, \forall x, y\in M, \quad a(x+y)=ax+ay$
+        \item $\forall x\in M, \quad 1_Rx=x$ et $0_Rx=0_M$.
+    \end{itemize}
+\end{dfn}
+
+\begin{ex}
+    \begin{itemize}
+        \item If $R$ is a field, then an $R$-module is an $R$-vector space
+        \item If $R=\Z$, a $\Z$-module is a commutative group 
+    \end{itemize}
+\end{ex}
+
+\begin{exo}
+$\Z/2\Z$ is a $\Z$-module. For $n>0$, $\Z/n\Z$-modules are commutative groups $M$ such that $nx=0_M$ for all $x\in M$.    
+\end{exo}
+
+\begin{dfn}
+    Let $M$ and $N$ be $R$-modules. An $R$-homomorphism\footnotemark{}\index{module!homomorphism}\index{module!linear map} from $M$ to $N$ is a group homomorphism $f: M \longrightarrow N$ such that $\forall a\in \R, \forall x\in M, \quad f(ax)=af(x)$.
+\end{dfn}
+
+\footnotetext{Alternatively, $R$-linear map}
+
+\begin{ex}~
+\begin{itemize}
+    \item $f : x\in \Z \longmapsto \bar x \in \Z / n\Z $ is a $\Z$-linear map 
+    \item $f : x\in M \longmapsto ax\in M$ for $a\in R$ is $\R$-linear.
+\end{itemize}
+\end{ex}
+
+\begin{dfn}
+If $M,N$ are $R$-modules, we denote by $\Hom_R(M, N)$ the set of $R$-linear maps from $M$ to $N$. We write $\End_R(M)$ for $\Hom_R(M,M)$. This set is naturally an $R$-module.
+\end{dfn}
+
+\begin{prop}
+    Let $f\in \Hom_R(M,N)$. If $f$ is a bijection then $f^{-1}$ is also $\R$-linear. Such a map is called an isomorphism.
+\end{prop}
+
+\begin{ex}
+\[
+\begin{array}{rrcl}
+    &  \Hom_R(R, M)& \longrightarrow & M \\
+    & f & \longmapsto & \displaystyle f(1) 
+\end{array}
+\] 
+is an isomorphism.
+\end{ex}
+
+\section{Constructions}
+
+\subsection{Submodules}
+
+\begin{dfn}
+    Let $M$ be an $R$-module. A submodule $N$ of $M$ is a subgroup of $M$ that is stable under multiplication by elements of $R$.\index{submodule}
+\end{dfn}
+
+\begin{ex}
+    \begin{itemize}
+        \item Submodules of $R$ seen as an $R$-module are ideals of $R$.
+        \item Submodules of a vector space $V$ seen as modules are exactly the vector subspaces of $V$.
+    \end{itemize}
+\end{ex}
+
+\begin{ex}
+    Let $M$ be a $R$-module and $I$ an ideal of $R$. Then \[IM =  \left\{ \sum a_ix_i, \quad a_i\in I, x_i\in M \right\} \] is a submodule of $M$, where we only consider the finite sums.
+\end{ex}
+
+\begin{ex}
+    The torsion submodule\index{torsion!submodule} \[M_{\mathrm{tors}} \left\{ x \in  M, \quad  \exists  a \in  R, a \text{ is not a zero divisor and } ax=0 \right\} \] is a submodule of $M$. Its elements are called torsion elements\index{torsion!element}
+\end{ex}
+
+\subsection{Kernel}
+
+\begin{dfn}
+    If $f: M \longrightarrow  N$ is an $R$-linear map, we define \[\ker f = \left\{ x \in  M, \quad  f(x)=0 \right\} \]
+    This is a submodule of $M$. As with kernels\index{kernel} in vector spaces, it characterises injectivity.
+\end{dfn}
+
+\subsection{Direct image}
+
+\begin{dfn}
+    Let $f: M \longrightarrow  N$ be an $R$-linear map. We define \[\im f = \left\{ f(x), \quad  x \in  M \right\}, \] and this set is a submodule of $N$. It characterises surjectivity.
+\end{dfn}
+
+\subsection{Quotients}
+
+\begin{dfn}
+    Let $M$ be an $R$-module and $N$ be a submodule of $M$. We define the quotient\index{module!quotient}\index{quotient} of $M$ by $N$, denoted $M / N$ to be the group quotient $M / N$ endowed with an $R$-module structure given by \[\forall a\in \R, \forall \xi \in  M / N, x \in  \xi \qquad a\xi=N + ax \] and with a natural projection $\pi : M \longrightarrow  M / N$ corresponding to the canonical surjective linear map obtained via the group quotient.
+\end{dfn}
+
+\begin{ex}
+    $ M / M_{\text{tors}}$ is a quotient of $M$. Additionally, \[(M / M_{\text{tors}})_{\text{tors}}=\left\{ 0 \right\}. \] We say that $ M / M_{\text{tors}}$ is torsion-free\index{torsion-free}
+\end{ex}
+
+\begin{ex}
+$I$ is an ideal of $R$. $M / IM$ is a quotient such that if $a \in  I$ and $x \in  M / IM$ then $ax=0$.
+
+The quotient $M / IM$ is naturally endowed with the structure of an $ R / I$-module (for $\alpha \in  R / I$, set $\alpha x = ax$ where $a \in  \alpha$, and this choice does not depend on $a$).
+\end{ex}
+
+\begin{prop}
+Let $M$ be an $R$-module and $N$ a submodule of $M$. There is a bijection between the set of submodules of  $M / N$ and the set of submodules of  $M$ containing  $N$ given by \[
+Q \subseteq M / N \longmapsto \pi^{-1}(Q)
+\] \[
+\pi(P) \; \raisebox{\depth}{\rotatebox[origin=c]{180}{$\longmapsto$}}\; P
+\] 
+\end{prop}
+
+\begin{thm}[Factorisation property of quotients\index{factorisation property}]
+Consider $M$ and $R$-module, $N$ a submodule of $M$,  $P$ another  $R$-module, and  $f : M \longrightarrow  P$ a linear map. The following properties are equivalent: \begin{enumerate}
+    \item $N \subset \ker f$
+    \item The map $f$ factors through $M / N$, which means there exists a map $g : M / N \longrightarrow  P$ such that the following diagram commutes \[\begin{tikzcd}
+    M & P \\
+    & {M/N}
+    \arrow["f", from=1-1, to=1-2]
+    \arrow["g"', from=2-2, to=1-2]
+    \arrow["\pi"', from=1-1, to=2-2]
+\end{tikzcd}\]
+\end{enumerate}
+If these conditions are met then $g$ is unique and $\ker g = \ker f / N$.
+\end{thm}
+
+\begin{proof}
+    $(2 \implies 1)$ If $g$ exists, then $f=g\circ \pi$.
+
+    $(1 \implies  2)$ We want to construct $g$. The only way to define it is to choose $x \in  M / N$ and $y \in  M$ such that $\pi(y)=x$, and set $g(x)=f(y)$. This does not depend on the choice of $y$, because if $y'$ is such that $\pi(y')=\pi(y)$, then \[f(y')=f(y+y'-y)=f(y)+f(y'-y)=f(y)\] since $y'-y \in  \ker \pi$. It is easily checked that $g$ is linear.
+
+    The function $g$ is unique because $\pi$ is a surjective map, which means every value of $g$ is fixed.
+\end{proof}
+
+\subsection{Cokernel}
+
+\begin{dfn}
+    If $f : M \longrightarrow  N$ is a linear map, the cokernel\index{cokernel} of $f$ is \[\coker  f= N / \im f\]
+    It characterises surjectivity.
+\end{dfn}
+
+\subsection{Sums and products }
+
+Let $(M_i)_{i \in  I}$ be a family of $R$-modules.
+
+\begin{dfn}
+    The product\index{product (of modules)}\index{module!product} $\prod_{i \in  I} M_i$ is the set of families $(x_i)_{i \in  I}$ with $x_i \in  M_i$. It is an $R$-module (operations are done position-wise).
+
+We write $M^I$ for the product $\prod_I M$.
+\end{dfn}
+
+
+\begin{dfn}
+    The sum\index{sum (of modules)}\index{module!sum} $\bigoplus_{i \in  I} M_i$ is the submodule of $\prod_{i \in  I} M_i$ of elements $(x_i)_{i \in  I}$ such that $x_i=0$ except for a finite number of $i \in  I$.
+\end{dfn}
+
+\begin{prop}
+For any family $(M_i)_{i \in  I}$, any module $N$, the following map is bijective \[
+\begin{array}{rcl}
+    \prod_{i \in  I}\Hom_R(N,M_i)  & \longrightarrow & \Hom_R(N, \prod_{i \in  I}M_i) \\
+    (f_i) \in  I & \longmapsto & \displaystyle (f : x \longmapsto (f_i(x_i))_{i \in  I})
+\end{array}
+\] 
+If $u_j : M_j \longrightarrow  \bigoplus_{i \in I}M_i, x \longmapsto (\delta_{i,j}x)_{i \in  I}$ then \[
+\begin{array}{rrcl}
+    & \Hom_R(\bigoplus_{i \in  I} M_i, N) & \longrightarrow & \prod_{i \in  I}\Hom_R(M_i, N) \\
+    & f & \longmapsto & \displaystyle ((f\circ u_i)_{i \in  I})
+\end{array}
+\]  
+is also bijective.
+\end{prop}
+
+\section{Sequence, exact sequence}
+
+Let $M_1, \cdots, M_n$ be $R$-modules.
+
+\begin{dfn}
+    A sequence is a family of maps $(u_i : M_i \longrightarrow  M_{i+1})_{1\leq i\leq n-1}$. We write \[M_1\xrightarrow{u_1} M_2 \xrightarrow{u_2}\cdots \xrightarrow{u_{n-1}}M_n.\]
+
+    We say that the sequence is exact\index{sequence}\index{exact sequence}\index{sequence!exact} if $\ker (u_{i})=\im(u_{i-1})$ for all $i$.
+\end{dfn}
+
+\begin{ex}
+\[
+    0 \xrightarrow{} M_1 \xrightarrow{u_1} M_2
+\] 
+is exact if and only if $u_1$ is injective.
+\end{ex}
+
+\begin{dfn}[Short exact sequence]
+    A short exact sequence\index{short exact sequence} is as follows: \[0 \xrightarrow{} M_1 \xrightarrow{u_1} M_2\xrightarrow{v}M_3 \xrightarrow{}0\] where $u$ is injective, $v$ is surjective and $\ker v=\im u$.
+\end{dfn}
+
+\begin{dfn}[Split short exact sequence]
+    A split short exact sequence is as follows \[0 \xrightarrow{} P \xrightarrow{x\mapsto (x,0)} P\oplus Q \xrightarrow{(y,z)\mapsto z}Q \xrightarrow{}0\]
+\end{dfn}
+
+\begin{rem}
+    Not all short exact sequences are split! e.g. \[0 \xrightarrow{} \Z \xrightarrow{\times 2}\Z \xrightarrow{\pi} \Z /2 \Z \xrightarrow{} 0\] but $\Z$ is not isomorphic to $\Z \oplus \Z / 2\Z$.
+\end{rem}
