@@ -47,7 +47,7 @@ $\Z/2\Z$ is a $\Z$-module. For $n>0$, $\Z/n\Z$-modules are commutative groups $M
 \end{exo}
 
 \begin{dfn}
-    Let $M$ and $N$ be $R$-modules. An $R$-homomorphism\footnotemark{}\index{module!homomorphism}\index{module!linear map} from $M$ to $N$ is a group homomorphism $f: M \longrightarrow N$ such that $\forall a\in \R, \forall x\in M, \quad f(ax)=af(x)$.
+    Let $M$ and $N$ be $R$-modules. An $R$-homomorphism\footnotemark{}\index{module!homomorphism}\index{module!linear map} from $M$ to $N$ is a group homomorphism $f: M \longrightarrow N$ such that $\forall a\in R, \forall x\in M, \quad f(ax)=af(x)$.
 \end{dfn}
 
 \footnotetext{Alternatively, $R$-linear map}
@@ -55,7 +55,7 @@ $\Z/2\Z$ is a $\Z$-module. For $n>0$, $\Z/n\Z$-modules are commutative groups $M
 \begin{ex}~
 \begin{itemize}
     \item $f : x\in \Z \longmapsto \bar x \in \Z / n\Z $ is a $\Z$-linear map 
-    \item $f : x\in M \longmapsto ax\in M$ for $a\in R$ is $\R$-linear.
+    \item $f : x\in M \longmapsto ax\in M$ for $a\in R$ is $R$-linear.
 \end{itemize}
 \end{ex}
 
@@ -64,7 +64,7 @@ If $M,N$ are $R$-modules, we denote by $\Hom_R(M, N)$ the set of $R$-linear maps
 \end{dfn}
 
 \begin{prop}
-    Let $f\in \Hom_R(M,N)$. If $f$ is a bijection then $f^{-1}$ is also $\R$-linear. Such a map is called an isomorphism.
+    Let $f\in \Hom_R(M,N)$. If $f$ is a bijection then $f^{-1}$ is also $R$-linear. Such a map is called an isomorphism.
 \end{prop}
 
 \begin{ex}
@@ -116,7 +116,7 @@ is an isomorphism.
 \subsection{Quotients}
 
 \begin{dfn}
-    Let $M$ be an $R$-module and $N$ be a submodule of $M$. We define the quotient\index{module!quotient}\index{quotient} of $M$ by $N$, denoted $M / N$ to be the group quotient $M / N$ endowed with an $R$-module structure given by \[\forall a\in \R, \forall \xi \in  M / N, x \in  \xi \qquad a\xi=N + ax \] and with a natural projection $\pi : M \longrightarrow  M / N$ corresponding to the canonical surjective linear map obtained via the group quotient.
+    Let $M$ be an $R$-module and $N$ be a submodule of $M$. We define the quotient\index{module!quotient}\index{quotient} of $M$ by $N$, denoted $M / N$ to be the group quotient $M / N$ endowed with an $R$-module structure given by \[\forall a\in R, \forall \xi \in  M / N, x \in  \xi \qquad a\xi=N + ax \] and with a natural projection $\pi : M \longrightarrow  M / N$ corresponding to the canonical surjective linear map obtained via the group quotient.
 \end{dfn}
 
 \begin{ex}
@@ -215,13 +215,14 @@ is exact if and only if $u_1$ is injective.
 \end{ex}
 
 \begin{dfn}[Short exact sequence]
-    A short exact sequence\index{short exact sequence} is as follows: \[0 \xrightarrow{} M_1 \xrightarrow{u_1} M_2\xrightarrow{v}M_3 \xrightarrow{}0\] where $u$ is injective, $v$ is surjective and $\ker v=\im u$.
+    A short exact sequence\index{short exact sequence}\index{sequence!short exact} is as follows: \[0 \xrightarrow{} M_1 \xrightarrow{u_1} M_2\xrightarrow{v}M_3 \xrightarrow{}0\] where $u$ is injective, $v$ is surjective and $\ker v=\im u$.
 \end{dfn}
 
-\begin{dfn}[Split short exact sequence]
+\begin{dfn}[Split short exact sequence\index{split short exact sequence}\index{sequence!split short exact}]
     A split short exact sequence is as follows \[0 \xrightarrow{} P \xrightarrow{x\mapsto (x,0)} P\oplus Q \xrightarrow{(y,z)\mapsto z}Q \xrightarrow{}0\]
 \end{dfn}
 
 \begin{rem}
     Not all short exact sequences are split! e.g. \[0 \xrightarrow{} \Z \xrightarrow{\times 2}\Z \xrightarrow{\pi} \Z /2 \Z \xrightarrow{} 0\] but $\Z$ is not isomorphic to $\Z \oplus \Z / 2\Z$.
 \end{rem}
+

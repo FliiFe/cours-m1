@@ -1,0 +1,63 @@
+\ifsolo
+    ~
+
+    \vspace{1cm}
+
+    \begin{center}
+        \textbf{\LARGE Maps between finitely generated modules} \\[1em]
+    \end{center}
+
+    \vspace{1cm}
+
+    \tableofcontents
+
+    \vspace{1cm}
+
+\else
+    \chapter{Maps between finitely generated modules}
+
+    \minitoc
+\fi
+\thispagestyle{empty}
+
+\section{Maps between free modules of finite rank}
+
+\begin{thm}
+Let $M$ be a free module of finite rank  $s$ and  $N$ be a free module of finite rank  $r$. The choice of a basis of  $M$ and  $N$ gives an isomorphism  \[
+\begin{array}{rrcl}
+    \Phi:& \Hom_R(M,N) & \longrightarrow & \mathcal M_{r,s}(R) \\
+    & f & \longmapsto & \displaystyle (\pi_j(f(e_i)))_{1\leq i\leq s,1\leq j\leq r}
+\end{array}
+\] 
+with $(e_i)_{1\leq i \in  \leq s}$ a basis of $M$, $(f_j)_{1\leq j\leq r}$ a basis of $N$ and $\pi_j$ the coordinate function on  $(f_j)_{1\leq j\leq r}$.
+\end{thm}
+
+\begin{dfn}
+    Let $A \in  \mathcal  M_n(R)$. The determinant\index{determinant} of $A$ is \[
+\det A = \sum_{\sigma \in  \mathfrak S_n} \epsilon(\sigma)\prod_{i=1}^{n}  a_{i,\sigma(i)}
+\] 
+\end{dfn}
+
+\begin{prop}[As expected...]
+\begin{enumerate}
+    \item We can compute $\det A$ by expansion along a column or a row
+    \item  If $A$ has two identical columns or rows then  $\det A=0$
+    \item If $\co(A)=(-1)^{i+j}(\Delta_{i,j})$ is the comatrix of  $A$\index{comatrix} ($\Delta_{i,j}$ is the determinant of $A$ with row  $i$ and column  $j$ removed) then \[
+    \transpose \co(A) = A \transpose \co (A) = (\det A)I_n
+    \] 
+    \item $\det(AB)=(\det A)(\det B)$\footnotemark
+\end{enumerate}
+\end{prop}
+\footnotetext{deduce from the case of fields}
+
+\begin{cor}
+$A \in  \mathcal  M_n(R)$ is invertivle if and only if $\det A$ also is. The candidate for an inverse is  $(\det A)^{-1} \transpose \co(A)$. The set of invertible matrices is denoted by $\GL_n(R)$.
+\end{cor}
+
+\begin{thm}
+Let $M$ be a free $R$-module of rank $n$ and $u \in  \End_R(M)$. Then
+\begin{enumerate}
+    \item $u$ is surjective  if and only if $\det u \in  R^\times$
+    \item $u$ is injective  if and only if $\det (u)$ is not a zero divisor
+\end{enumerate}
+\end{thm}
